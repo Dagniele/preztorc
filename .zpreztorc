@@ -192,4 +192,9 @@ alias gl='git log --oneline -n10'
 alias gc='git commit'
 alias s='function _runStart(){ echo "Starting client(s) $1" && CLIENT=$1 npm start };_runStart'
 
-. /usr/share/autojump/autojump.sh
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+else
+	. /usr/share/autojump/autojump.sh
+fi
+
